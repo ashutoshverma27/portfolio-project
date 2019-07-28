@@ -25,13 +25,13 @@ SECRET_KEY = 'ry5-)0)dcravy6gmot(y-65&o=lfuexrbyg=zpvp6t(cm%r_le'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.55']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-     'blog.apps.BlogConfig',
+    'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,7 +123,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATICFILES_DIRS=[
+os.path.join(BASE_DIR, 'portfolio/static/')
+]
+
+STATIC_ROOT=os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
 
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
